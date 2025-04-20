@@ -11,10 +11,12 @@ jobs:
       - run:
           name: Build Docker Image
           command: docker build -t myappp .
-          command: docker run -itd -p 8081:8081 --name myapp-containerr myappp
       - run:
           name: Checking images
           command: docker images
+      - run:
+          name: Run Docker Container
+          command: docker run -itd -p 8081:8081 --name myapp-container myappp
 
   test:
     docker:
